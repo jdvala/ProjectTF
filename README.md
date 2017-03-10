@@ -14,4 +14,10 @@ t10k-labels-idx1-ubyte.gz:   test set labels (4542 bytes)
 
 The images are 28x28 pixels and the labels have 10 classes specifing to which class the images 
 
+Convolutional Neural Network is also evaluated on same MNIST handwritten dataset as the autoencoder
+
+However if some one wants to use a differet dataset, they very well can but do keep in mind that both of these examples are built using Tflearn, Tensorflow and Sklearn so they need to keep in mind the bits and peices of them.
+Also while changing the data set you must keep in mind the shape and rank of the tensors. All these functions uses a specific corelation between the inputs and labels.
+
+
 Other models will be updated soon.
