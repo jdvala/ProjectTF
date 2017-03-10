@@ -1,4 +1,4 @@
-__future__ import division, print_function, absolute_import
+from __future__ import division, print_function, absolute_import
 
 import numpy as np
 #import matplotlib.pyplot as plt
@@ -22,7 +22,6 @@ encoder = tflearn.input_data(shape=[None, 784])
 encoder = tflearn.fully_connected(encoder, 256)
 encoder = tflearn.fully_connected(encoder, 64)
 encoder = tflearn.fully_connected(encoder, 10, activation='softmax')
-
 acc= tflearn.metrics.Accuracy()
 
 # Regression, with mean square error
@@ -41,26 +40,45 @@ print("\t"+"Mean accuracy of the model is :", evali)
 lables = model.predict_label(testImages)
 print("\n")
 print("\t"+"The predicted labels are :",lables)
-prediction = model.predict(testImages)
+
+y = model.predict(testImages)
 print("\n")
 print("\t"+"\t"+"\t"+"The predicted probabilities are :" )
 print("\n")
-print (prediction[f])
-sess =tf.Session()
-
-flattenTestLable = tf.reshape(testLables,[-1])
-flattenprediction = tf.reshape(prediction,[-1])
-
-confusionMatrix = tf.confusion_matrix(flattenTestLable, flattenprediction, num_classes =10)
-
-
+#print (prediction[10])
+sess = tf.Session()
+prediction = tf.argmax(y,1)
+#classification = sess.run(tf.argmax(prediction), feed_dict={x: [testImages]})
 with sess.as_default():
- 	print("confusion matrix = ",confusionMatrix.eval())
+	print (len(prediction.eval()))
+	predicted_labels = prediction.eval()
+
+
+Images, Lables, testImages, targetLables = mnist.load_data(one_hot=False)
+confusionMatrix = confusion_matrix(targetLables, predicted_labels)
+print (confusionMatrix)
+
+
+
+
+
+#flattenTestLable = tf.reshape(testLables,[-1])
+#flattenprediction = tf.reshape(prediction,[-1])
+
+
  
-recall = tf.metrics.recall(flattenprediction ,flattenTestLable, weights=None,
-                     metrics_collections=None, updates_collections=None,
-                     name="Recall")
-precision = tf.metrics.precision(flattenTestLable,flattenprediction,weights=None, metrics_collections=None, 
-								updates_collections=None, name='precision')
-     print("Precision:", precision)
-     print("Recall :", recall)
+#                     metrics_collections=None, updates_collections=None,
+                     #name="Recall")
+#precision = tf.metrics.precision(flattenTestLable,flattenprediction,weights=None, metrics_collections=None, 
+								#updates_collections=None, name='precision')
+#print("Precision:", precision)
+#print("Recall :", recall)
+
+#import tflearn.datasets.mnist as mnist
+#Images, Lables, testImages, targetLables = mnist.load_data(one_hot=False)
+#with sess.as_default():
+
+#	print ("shape of test labels ",tf.shape(testLables).eval())
+#	print("shape of predicted labels",tf.shape(lables).eval())
+#confusionMatrix = confusion_matrix(targetLables, lables )
+#with sess.as_default():
