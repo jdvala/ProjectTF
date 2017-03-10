@@ -93,12 +93,12 @@ Images, Lables, testImages, targetLables = mnist.load_data(one_hot=False)
 # Used Sklearn library for evaluation as tensorflows library was not documented properly 
 # Generated the Confusion Matrix 
 confusionMatrix = confusion_matrix(targetLables, predicted_labels)
-print (confusionMatrix)
+print ("\n"confusionMatrix)
 
 # Classification_report in Sklearn provide all the necessary scores needed to succesfully evaluate the model. 
 classification = classification_report(targetLables,predicted_labels, digits=4, 
 				target_names =['class 0','class 1','class 2','class 3','class 4','class 5','class 6','class 7','class 8','class 9'])
-print (classification)
+print ("\n"classification)
 
 
 
