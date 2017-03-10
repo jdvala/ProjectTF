@@ -51,7 +51,7 @@ encoder = tflearn.fully_connected(encoder, 10, activation='softmax')
 acc= tflearn.metrics.Accuracy()
 
 # Regression, with mean square error (learn about it more here http://tflearn.org/layers/estimator/)
-net = tflearn.regression(encoder, optimizer='adam', learning_rate=0.001,
+,net = tflearn.regression(encoder, optimizer='adam', learning_rate=0.001,
                          loss='mean_square', metric=acc, shuffle_batches=True)
 
 
@@ -93,12 +93,12 @@ Images, Lables, testImages, targetLables = mnist.load_data(one_hot=False)
 # Used Sklearn library for evaluation as tensorflows library was not documented properly 
 # Generated the Confusion Matrix 
 confusionMatrix = confusion_matrix(targetLables, predicted_labels)
-print ("\n"confusionMatrix)
+print ("\n",confusionMatrix)
 
 # Classification_report in Sklearn provide all the necessary scores needed to succesfully evaluate the model. 
 classification = classification_report(targetLables,predicted_labels, digits=4, 
 				target_names =['class 0','class 1','class 2','class 3','class 4','class 5','class 6','class 7','class 8','class 9'])
-print ("\n"classification)
+print ("\n",classification)
 
 
 
