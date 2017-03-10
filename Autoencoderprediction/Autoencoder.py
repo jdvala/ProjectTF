@@ -19,7 +19,6 @@ Also for reconstructing the images this program used decoder which we don't need
 
 [4] All the steps involved in this program is commented out for better understanding of this program. 
 
-By: Jay Vala with help from Navin F Henry 
 """
 from __future__ import division, print_function, absolute_import
 
