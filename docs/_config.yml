@@ -1,7 +1,7 @@
 # Site settings
 title: "The A Team"
 description: "ISEE Team Project 2017"
-baseurl: ""
+baseurl: "https://jdvala.github.io/ProjectTF/"
 url: "https://jdvala.github.io/ProjectTF/"
 
 # Build settings
@@ -13,7 +13,7 @@ paginate: 3
 # Links
 links:
   - title: "Home"
-    url: https://jdvala.github.io/ProjectTF/
+    url: 
   - title: "About"
     url: /about
   - title: "Blog"
