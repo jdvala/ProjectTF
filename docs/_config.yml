@@ -1,8 +1,8 @@
 # Site settings
-title: "Typewriter"
-description: "So I was feeling nostalgic."
+title: "The A Team"
+description: "ISEE Team Project 2017"
 baseurl: ""
-url: "http://alixedi.github.io"
+url: "
 
 # Build settings
 markdown: kramdown
@@ -14,9 +14,6 @@ paginate: 3
 links:
   - title: "abt"
     url: /about
-  - title: "twt"
-    url: http://twitter.com/alixedi
-  - title: "git"
-    url: http://github.com/alixedi
-  - title: "rss"
-    url: /feed.xml
+  - title: "Blog"
+    url: /_posts
+  
