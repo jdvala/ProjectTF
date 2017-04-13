@@ -12,7 +12,9 @@ paginate: 3
 
 # Links
 links:
-  - title: "abt"
+  - title: "Home"
+    url: https://jdvala.github.io/ProjectTF/
+  - title: "About"
     url: /about
   - title: "Blog"
     url: /_posts
