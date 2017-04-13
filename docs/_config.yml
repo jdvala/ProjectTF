@@ -19,3 +19,5 @@ links:
   - title: "Blog"
     url: posts
   
+
+theme: jekyll-theme-hacker
