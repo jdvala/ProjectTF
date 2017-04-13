@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-</center></b></font size = '20'>We are "The A Team"</font></b></center>
+</center></b></font-size = 20px>We are "The A Team"</font-size></b></center>
